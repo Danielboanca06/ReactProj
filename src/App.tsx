@@ -3,6 +3,7 @@ import { Routes, Route, Outlet, Link, BrowserRouter } from "react-router-dom";
 import { Home } from "./pages/home/Home";
 import { About } from "./pages/about/About";
 import { Header } from "./components/header/Header";
+import { BookingFront } from "./pages/booking/BookingFront";
 
 function App() {
   
@@ -12,7 +13,8 @@ function App() {
     <Header/>
     <Routes>
           <Route index element={<Home />} />
-          <Route path="about" element={<About />} /> 
+          <Route path="/about" element={<About />} />
+          <Route path ="/book" element={<BookingFront/>}/>
       </Routes>
     </BrowserRouter>
     </>

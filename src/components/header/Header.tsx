@@ -6,6 +6,7 @@ export function Header () {
     <ul> 
         <NavLink to="/"><li>Home</li></NavLink>
         <NavLink to="/about"><li>About</li></NavLink>
+        <NavLink to="/book">Book</NavLink>
     </ul>
     </>
 }
