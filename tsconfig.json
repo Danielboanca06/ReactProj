@@ -5,6 +5,7 @@
     "module": "ESNext",
     "skipLibCheck": true,
     "checkJs": true,
+    "baseUrl": "./",
 
     /* Bundler mode */
     "moduleResolution": "bundler",
