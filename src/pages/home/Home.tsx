@@ -1,17 +1,28 @@
 import React from "react";
 import Slider from "./Slider";
+import { HairCuts, HairWash, BeardTrim } from "../../assets/images/HairCut";
+
 export function Home () {
     return<>
             <div className="flex justify-center text-red pt-20">
                 {<Slider/>}
             </div>
             
-                <div className="flex justify-center pb-5 font-bold"><h1 className="text-5xl">Services</h1></div>
-                <ul className="flex justify-evenly pt-3px">
-                    <li><h3 className="text-3xl">Haircuts</h3></li>
-                    <li><h3 className="text-3xl">Beard Trims</h3></li>
+                <div className="flex justify-center pb-5 font-bold">
+                    <h1 className="text-5xl">Services</h1>
+                </div>
+                <ul className="flex justify-around">
+                    <li><HairCuts/></li>
+                    <li><BeardTrim/></li>
+                    <li><HairWash/></li>
+                </ul>
+                <ul className="flex justify-around pt-3px pb-10">
+                    
+                    <li className="pl-4"><h3 className="text-3xl">Haircuts</h3></li>
+                    <li className="pl-4"><h3 className="text-3xl">Beard Trims</h3></li>
                     <li><h3 className="text-3xl">Hair Wash</h3></li>
                 </ul>
-            <img src='' alt="" />
+                
+          
         </>
 }

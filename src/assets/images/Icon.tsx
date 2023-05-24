@@ -4,7 +4,7 @@ export default function Icon(){
     return (
      
 <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
- width="40pt" height="40pt" viewBox="0 0 1280.000000 1196.000000"
+ width="70pt" height="70pt" viewBox="0 0 1280.000000 1196.000000"
  preserveAspectRatio="xMidYMid meet">
 <metadata>
 Created by potrace 1.15, written by Peter Selinger 2001-2017
