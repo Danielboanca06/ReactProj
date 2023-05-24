@@ -2,6 +2,7 @@ import React from "react";
 import { useState, useEffect } from "react";
 import { AiOutlineArrowLeft, AiOutlineArrowRight } from "react-icons/ai";
 import { sliderData } from "./sliderData";
+
 import "./slider.css"
 
 export default function Slider(){
@@ -52,9 +53,12 @@ export default function Slider(){
                 <img src={slide.image} alt="slide" className="image" />
                 <div className="content">
                   <h2>{slide.heading}</h2>
-                  <p>{slide.desc}</p>
                   <hr />
-                  <button className="--btn --btn-primary">Book Now</button>
+                  <p>{slide.desc}</p>
+                  
+                  
+                    
+                 
                 </div>
               </div>
             )}

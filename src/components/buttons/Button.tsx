@@ -1,9 +1,10 @@
 import React from "react";
-import "./Button.css"
 
 
-export function Button ({children, className, ...rest}){
+
+export default function Button ({children, ...rest}){
     
 
-    return <button className="" {...rest}>{children}</button>
+    return <button className="lassName='text-[20px] hover:border-[3px] border-zinc-700 rounded-full
+    px-4 py-2 cursor-pointer" {...rest}>{children}</button>
 }
