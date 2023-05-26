@@ -1,9 +1,10 @@
 import React, {useEffect} from "react";
-import mapboxgl from "mapbox-gl/dist/mapbox-gl.js"
+
 
 export function AboutLocation (){
 
-
+    
+    
    
     return (
         <div className="flex flex-col justify-center content-center">
@@ -19,6 +20,7 @@ export function AboutLocation (){
             <div className="flex justify-center  h-60 w-60 ">
 
             </div>
+   
             </div>
         </div>
     )
