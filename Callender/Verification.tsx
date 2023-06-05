@@ -98,11 +98,14 @@ export default function Verification () {
             </button>
         </div>           
     </form>
+    <div className='p-10 flex justify-center'>
     <button
+    
      onClick={handleResendCode}
         className=" relative bg-blue-500 hover:bg-blue-600 text-white font-medium px-4 py-2 rounded-md">
             Resend Code
             </button>
+            </div>
     </div> }
 </>
 }

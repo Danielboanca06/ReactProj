@@ -1,5 +1,4 @@
 import React, {useState, useEffect} from "react"
-import Loader from "../src/components/Loader/BoxLoader";
 import Form from "../src/components/Forms/Form"
 import sendEmail from "../src/components/Forms/Mailer";
 import {useNavigate } from "react-router-dom";
@@ -43,13 +42,14 @@ let navToClarification = useNavigate();
     useEffect(()=>{
       if(userData){
         setHasAccount(true);
-        let t = null
+        let t: any = null
     let authToken = ""
 
     if(userData){
       t = JSON.parse(userData);
-      authToken = t.details.private.authToken
+        authToken = t.details.private.authToken
     }
+   
 
     ;
     fetch("https://barberapp-e3a5c-default-rtdb.europe-west1.firebasedatabase.app/userdata.json")
