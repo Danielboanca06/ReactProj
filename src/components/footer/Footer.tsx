@@ -2,6 +2,7 @@ import React from "react";
 import Icon from "../../assets/images/Icon";
 import { FaceBookIcon, InstaGramIcon, YouTubeIcon, TikTokIcon } from "../../assets/images/SocialIcons";
 import  Button  from "../buttons/Button";
+import OpeningHours from "../OpeningHours";
 import { NavLink } from "react-router-dom";
 export default function Footer () {
 
@@ -20,6 +21,7 @@ export default function Footer () {
     
 
     return (<>
+     
         <div className="flex justify-between content-center">
        
   <div className=" flex relative group">
@@ -45,7 +47,11 @@ export default function Footer () {
         </div>
         
   </div>
-  <div className="flex justify-center">Copyright © 2023 Barber Shop. All rights reserved.</div>
+  <br />
+  <hr className='w-full py-1 bg-cyan-500'/>
+      <OpeningHours/>
+
+      <div className="flex justify-center">Copyright © 2023 Barber Shop. All rights reserved.</div>
    </> )
 }
  

@@ -1,5 +1,10 @@
 import React from "react";
+import Services from "./book/Services";
 
 export function BookingFront (){
-    return <div>Book Now !!</div>
+    return <>
+    <div>
+    <Services/>
+    </div>
+    </>
 }

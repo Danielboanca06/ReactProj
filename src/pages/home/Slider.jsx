@@ -1,8 +1,6 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import { AiOutlineArrowLeft, AiOutlineArrowRight } from "react-icons/ai";
 import { sliderData } from "./sliderData";
-
 import "./slider.css"
 
 export default function Slider(){
@@ -11,7 +9,7 @@ export default function Slider(){
 
   const autoScroll = true;
   let slideInterval;
-  let intervalTime = 6000;
+  let intervalTime = 12000;
 
   const nextSlide = () => {
     setCurrentSlide(currentSlide === slideLength - 1 ? 0 : currentSlide + 1);
@@ -40,8 +38,7 @@ export default function Slider(){
 
   return (
     <div className="slider">
-      <AiOutlineArrowLeft className="arrow prev" onClick={prevSlide} />
-      <AiOutlineArrowRight className="arrow next" onClick={nextSlide} />
+  
       {sliderData.map((slide, index) => {
         return (
           <div
@@ -49,16 +46,12 @@ export default function Slider(){
             key={index}
           >
             {index === currentSlide && (
-              <div >
+              <div className="flex">
                 <img src={slide.image} alt="slide" className="image" />
                 <div className="content">
                   <h2>{slide.heading}</h2>
                   <hr />
-                  <p>{slide.desc}</p>
-                  
-                  
-                    
-                 
+                  <p>{slide.desc}</p>     
                 </div>
               </div>
             )}
