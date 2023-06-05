@@ -1,0 +1,34 @@
+/* c.css */
+
+.container {
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 15px;
+    padding-top: 50px ;
+  }
+  
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(7, minmax(0, 1fr));
+    gap: 5rem;
+ 
+    
+  }
+  
+  .btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5rem;
+    border-radius: 0.25rem;
+    color: black;
+    background-color: rgb(6 182 212 );
+    font-size: large;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  }
+  .a, .s {
+    border: 2px solid black;
+    background-color: cyan;
+  }
+  

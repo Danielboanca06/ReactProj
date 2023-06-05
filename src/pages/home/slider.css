@@ -43,7 +43,7 @@
     padding: 3rem;
     background: rgba(0, 0, 0, 0.3);
     animation: slide-up 1s ease 0.5s;
-     animation-delay: 1s;
+     animation-delay: 0.5s;
     animation-fill-mode: forwards;
     visibility: hidden;
   }
@@ -74,31 +74,6 @@
     opacity: 1;
     transform: translateX(0);
     transition: all 0.5s ease;
-  }
-  
-  .arrow {
-    border: 2px solid white;
-    background-color: transparent;
-    color: #fff;
-    cursor: pointer;
-    height: 2rem;
-    width: 2rem;
-    border-radius: 50%;
-    position: absolute;
-    z-index: 999;
-  }
-  .arrow:hover {
-    background-color: #fff;
-    color: #777;
-  }
-  
-  .next {
-    top: 35%;
-    right: 1.5rem;
-  }
-  .prev {
-    top: 35%;
-    left: 1.5rem;
   }
   
   hr {

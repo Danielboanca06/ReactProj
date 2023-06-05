@@ -6,24 +6,21 @@ import { BookingFront } from "./pages/booking/BookingFront";
 import { AboutUs } from "./pages/about/AboutUs";
 import { AboutLocation } from "./pages/about/AboutLocation";
 import { AboutServices } from "./pages/about/AboutServices";
-import Booked from "./pages/booking/Booked";
-import Book from "./pages/booking/book/book";
-import MyCalendar from "./components/Callender";
+import Services from "./pages/booking/book/Services";
+import Clarification from "../Callender/Clarification";
 import Footer from "./components/footer/Footer";
+import { CalendarFront } from "../Callender/CalendarFront";
+import Verification from "../Callender/Verification";
 import "./App.css"
+
 
 function App() {
   
   return (
     <>
     <BrowserRouter>
-    <div className="flex flex-col min-h-screen">
-    <div className="w-full bg-gradient-to-r from-neutral-500 to-neutral-600
-     content-center px-10 md:px-16 lg:px-38 pt-7 pb-7">
+    <div className="flex flex-col min-h-screen text-black">
     <Header/>
-    </div>
-    
-      <div className="content-column">
       <Routes>
           <Route index element={<Home />} />
           <Route path="/about/us" element={<AboutUs />}/>
@@ -31,18 +28,20 @@ function App() {
             <Route path="/about/location" element={<AboutLocation/>}/>
             
           <Route path ="/booking" element={<BookingFront/>}/>
-         
-          <Route path="/book" element={<Book/>}/>
-          <Route path="/booked" element={<Booked/>}/>
-          <Route path="/date" element={<MyCalendar/>}/>
-          
-    
-         
-          
+             
+          <Route path ="/services" element={<Services/>}/>
+             
+        
+          <Route path="/verification" element={<Verification/>}/>
+          <Route path="/book" element={<CalendarFront/>}/>
+          <Route path="/date" element={<CalendarFront/>}/>
+          <Route path="/clarificaion" element={<Clarification/>}/>
+   
+   
       </Routes>
-      </div>
-      <div className="w-full bg-gradient-to-r from-neutral-500 to-neutral-600
-     content-center px-10 md:px-16 lg:px-38 pt-7 pb-7">
+      <hr className='w-full py-1 bg-cyan-500'/>
+      <div className="w-full bg-gradient-to-b from-sky-00  to-stone-200
+     justify-center px-10 md:px-16 lg:px-38 pt-7 pb-20 ">
       <Footer/>
     </div>
      </div>
