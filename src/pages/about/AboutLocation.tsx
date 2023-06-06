@@ -38,9 +38,6 @@ export function AboutLocation() {
       <h1 className="flex text-7xl justify-center p-10">
         Location
       </h1>
-      <p className="text-2xl">
-        We Are Located In Ireland...
-      </p>
       <div className="flex content-center justify-center p-20">
       <div id="map" style={{ height: '600px', width: "600px" }}></div>
       </div>

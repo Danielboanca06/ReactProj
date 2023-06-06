@@ -13,11 +13,11 @@ export default function Services () {
     <h1 className="text-4xl">Select A Service</h1>
     </div>
     
-  <div className="flex flex-col items-center ">
+  <div className="flex flex-col items-center">
     <div className="text-center mb-8">
 
     
-    <div className="flex justify-between border-2 border-black w-[500px]">
+    <div className="flex justify-between border-2 border-black w-[500px] max-w-sm">
         <div className="pl-4 py-5">
             <h1 className="flex font-bold">Men's Dry Haircut</h1>
             <p className="flex justify-center">20 minutes, €15</p>

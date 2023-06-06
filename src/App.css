@@ -1,9 +1,11 @@
 #root {
     display: flex;
     flex-direction: column;
-    width: 100%;
+    min-width:100vw ;
     background: linear-gradient(to bottom, rgb(244 244 245), rgb(212 212 216));
     margin: 0 auto;
   
   }
-  
+ 
+
+

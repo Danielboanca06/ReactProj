@@ -11,7 +11,7 @@ export const sliderData = [
       desc: "Step into our renowned barbershop and let our expert hands sculpt your hair into a statement of style that exudes confidence and magnetism.",
     },
     {
-      image: "https://d375139ucebi94.cloudfront.net/region2/ie/4070/resource_photos/aa51f5d63242435aac5da2105bdc0dbd.jpeg",
+      image: "https://www.realmenrealstyle.com/wp-content/uploads/2016/12/How-To-Communicate-With-Your-Barber-1.jpg",
       heading: "Unlock Your Signature Look",
       desc: "Immerse yourself in the artistry and finesse that defines our barbershop, where every haircut is a testament to our unwavering commitment to excellence.",
     },

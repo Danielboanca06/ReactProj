@@ -1,5 +1,5 @@
 import React from "react"
-import { Routes, Route, Outlet, Link, BrowserRouter } from "react-router-dom";
+import { Routes, Route, BrowserRouter } from "react-router-dom";
 import { Home } from "./pages/home/Home";
 import { Header } from "./components/header/Header";
 import { BookingFront } from "./pages/booking/BookingFront";
@@ -45,6 +45,7 @@ function App() {
       <Footer/>
     </div>
      </div>
+    
     </BrowserRouter>
     </>
   )

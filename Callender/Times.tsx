@@ -129,13 +129,13 @@ if(date.split(" ")[0] !== "Sun"){
     <h1 className='flex pb-10 justify-center text-3xl'>{ordinalNumbers(date.split(" ")[1])}</h1>
     {(times.length < 21) ?  <h1 className='pt-5 flex justify-center text-3xl'>The Times Availible</h1>:  <h1 className='pt-5 flex justify-center text-3xl'>Select Your Time</h1>  }
     {selectedTime && <h1 className='flex justify-center text-3xl'>{selectedTime}</h1>}
-    <div className="container mx-auto">
-          <div className="grid grid-cols-7 gap-2">
+    <div className="container">
+          <div className="grid pb-5">
             {times.map((time, index) => (
               <button
                 key={index}
                 onClick={() => handleTimeClick(time)}
-                className={`flex p-10 btn ${selectedTime === time ? "s" : ""}`}
+                className={`btn ${selectedTime === time ? "s" : ""}`}
               >
                 {time}
               </button>
@@ -150,7 +150,7 @@ if(date.split(" ")[0] !== "Sun"){
   return <>
    <hr className='w-full py-1 bg-cyan-500'/>
     <div className='flex flex-col items-center justify-center font-mono p-20'>
-      <h1 className='text-7xl font-bold p-20'>Closed</h1>
+      <h1 className='text-5xl font-bold p-20'>Closed</h1>
       <p className='text-2xl font-semibold pb-20'>We Are Not Open On Sunday</p>
     </div>
   </>

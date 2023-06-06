@@ -9,16 +9,11 @@ export default function Slider(){
 
   const autoScroll = true;
   let slideInterval;
-  let intervalTime = 12000;
+  let intervalTime = 12500;
 
   const nextSlide = () => {
     setCurrentSlide(currentSlide === slideLength - 1 ? 0 : currentSlide + 1);
-    console.log("next");
-  };
-
-  const prevSlide = () => {
-    setCurrentSlide(currentSlide === 0 ? slideLength - 1 : currentSlide - 1);
-    console.log("prev");
+    
   };
 
   function auto() {
@@ -38,27 +33,27 @@ export default function Slider(){
 
   return (
     <div className="slider">
-  
-      {sliderData.map((slide, index) => {
-        return (
-          <div
-            className={index === currentSlide ? "slide current" : "slide"}
-            key={index}
-          >
-            {index === currentSlide && (
-              <div className="flex">
-                <img src={slide.image} alt="slide" className="image" />
-                <div className="content">
-                  <h2>{slide.heading}</h2>
-                  <hr />
-                  <p>{slide.desc}</p>     
-                </div>
+    {sliderData.map((slide, index) => {
+      return (
+        <div
+          className={index === currentSlide ? "slide current" : "slide"}
+          key={index}
+        >
+          {index === currentSlide && (
+            <>
+              <img src={slide.image} alt="slide" className="image" />
+              <div className="content">
+              <hr className="border-white my-2" />
+                <h2 className="text-white font-mono">{slide.heading}</h2>
+                <hr className="border-white my-2" />
+                
               </div>
-            )}
-          </div>
-        );
-      })}
-    </div>
-  );
+            </>
+          )}
+        </div>
+      );
+    })}
+  </div>
+);
 };
 

@@ -7,12 +7,12 @@ import Button from "../../components/buttons/Button"
 export function Home () {
     return<>
             <div className="flex justify-center text-red pt-20">
-                {<Slider/>}
+                <Slider/>
             </div>
-                <div className="flex justify-center pb-5 font-bold">
+                <div className="flex justify-center pt-5 font-bold">
                     <h1 className="text-5xl">Services</h1>
                 </div>
-                <ul className="flex justify-around">
+                <ul className="flex justify-around pt-5">
                     <li><Button>
                             <NavLink to="/services">
                                <HairCuts/> 
