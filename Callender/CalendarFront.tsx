@@ -1,11 +1,14 @@
 import React, { useState } from 'react';
 import { Time } from './Times';
 import './calenderFront.css';
+import { Header } from '../src/components/header/Header';
+import DayIcon from '../src/assets/images/DayIcon';
+import TimeIcon from '../src/assets/images/TimeIcon';
 
 const d: Array<Array<string>> = [];
 const today = new Date();
 
-for (let i = 0; i < 27; i++) {
+for (let i = 0; i < 28; i++) {
   const currentDate = new Date(today.getFullYear(), today.getMonth(), today.getDate() + i);
   const day = currentDate.toLocaleDateString('en-US', { weekday: 'short' });
   const date = currentDate.getDate();
@@ -24,24 +27,35 @@ export function CalendarFront() {
 
   return (
     <>
-      {!date && <h1 className='flex pt-5 justify-center text-black text-3xl'>Select A Day</h1>}
-      {date && <h1 className='flex pt-5 justify-center text-black text-3xl'>Select A Time</h1>}
-      <div className="container pb-5">
-        <div className="grid">
-          {d.map((day, index) => (
-            <button
-              key={index}
-              onClick={() => handleClick(day)}
-              className={`flex max-w-sm p-10 btn ${date === day.join(" ") ? 'active' : ''}`}
-              style={date === day.join(" ") ? { backgroundColor: 'cyan', border: '2px solid black' } : {}}
-            >
-              {day.join(" ")}
-            </button>
-          ))}
-        </div>
-      </div>
+    <div>
+      <Header overlay={false}/>
+    </div>
+    
+       <div className="flex font-mono justify-center items-center py-5 font-bold px-0 bg-neutral-800 text-white">
+                <h1 className="pr-2"><DayIcon/></h1> 
+                    <h1 className="text-3xl"> Select A Day </h1>
+                </div>
+
+                <div className="custom-container bg-neutral-700">
+  <div className="custom-grid">
+    {d.map((day, index) => (
+      <button
+        key={index}
+        onClick={() => handleClick(day)}
+        className="flex items-center bg-neutral-800 text-white border-2 border-black rounded-lg p-6 text-2xl w-full"
+        style={date === day.join(" ") ? { backgroundColor: 'gold', border: '2px solid black', color: "black" } : {}}
+      >
+        {day.join(" ")}
+      </button>
+    ))}
+  </div>
+</div>
+
+
+
+     
       {date && (
-        <div>
+        <div className='bg-neutral-700'>
           <Time date={date} />
         </div>
       )}

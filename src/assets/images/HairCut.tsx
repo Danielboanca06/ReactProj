@@ -2,7 +2,7 @@ import React from "react";
 
 export function HairCuts (){
     return (
-        <svg fill="#000000" height="150px" width="150px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"  
+        <svg fill="#EAB308" height="30px" width="30px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"  
 	 viewBox="0 0 460.119 460.119">
 <g id="XMLID_518_">ss
 	<g>
@@ -48,7 +48,7 @@ export function HairCuts (){
 }
 export function BeardTrim () {
     return(
-        <svg fill="#000000" height="150px" width="150px" version="1.1" id="Layer_1" 
+        <svg fill="#000000" height="80px" width="80px" version="1.1" id="Layer_1" 
         viewBox="0 0 461.138 461.138">
    <g id="XMLID_677_">
        <g>

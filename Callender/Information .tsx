@@ -68,7 +68,7 @@ let navToClarification = useNavigate();
       }
     },[]);
 
-    //
+    
   function handleClick () {
    
     
@@ -106,26 +106,22 @@ let navToClarification = useNavigate();
   }//
 
   function handleResetClick () {
-   
-    
       setHasAccount(false)
-    
-    console.log("reset")
   }
 
     return <>
-     <hr className='w-full py-1 bg-cyan-500'/>
+     
        {(!hasAccount) ? <div className="flex justify-center p-10">
            
                <Form time={time} date={date}/>
           
         </div> : <div className="flex flex-col">
-          <div className="flex justify-center p-20 text-4xl">{`Welcome Back ${name}`}</div>
             
+          <div className="flex font-mono justify-center p-20 text-3xl text-white ">{`Welcome Back`}</div>
         <div className="flex p-10 justify-center text-2xl">
             <button
       onClick={handleClick}
-      className="relative p-20 bg-blue-500 hover:bg-blue-600 text-white font-medium px-4 py-2 rounded-md"
+      className="relative p-20 font-mono bg-neutral-800 hover:bg-neutral-700 border-2 border-black text-white font-medium px-4 py-2 rounded-md"
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
@@ -141,10 +137,10 @@ let navToClarification = useNavigate();
     <div className="flex p-20  justify-center ">
             <button
       onClick={handleResetClick}
-      className="relative p-20 bg-blue-500 hover:bg-blue-600 text-white font-medium px-4 py-2 rounded-md"
+      className="relative p-20 font-mono bg-neutral-800 hover:bg-neutral-500 border-2 border-black text-white font-medium px-4 py-2 rounded-md"
      
     >
-      Reset Your information
+      Reset Your Information
     </button>
     </div>
         </div>}

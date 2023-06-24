@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import mapboxgl from 'mapbox-gl';
 
-export function AboutLocation() {
+export function MapBoxLocation() {
   useEffect(() => {
     mapboxgl.accessToken = 'pk.eyJ1IjoiZGFuaWVsYm9hbmNhIiwiYSI6ImNsaTFuNXExbDF6YnkzbG13c3c5aWkzd3AifQ.OLyGRDKQrADw7QujEJ-4mQ';
     const map = new mapboxgl.Map({
@@ -34,14 +34,11 @@ export function AboutLocation() {
   }, []);
 
   return (
-    <div className="flex flex-col justify-center content-center">
-      <h1 className="flex text-7xl justify-center p-10">
-        Location
-      </h1>
-      <div className="flex content-center justify-center p-20">
-      <div id="map" style={{ height: '600px', width: "600px" }}></div>
-      </div>
-     
-    </div>
+    <div className="flex flex-col justify-center items-center">
+  <div className="flex justify-center p-10  sm:p-10">
+    <div id="map" className="w-full min-w-fit " style={{ height: '400px' }}></div>
+  </div>
+</div>
+
   )
 }

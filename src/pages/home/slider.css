@@ -1,35 +1,68 @@
+
+
+.overlay {
+  
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  position: absolute;
+  top: 27%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+
+  padding: auto;
+  margin-bottom: 5px ;
+  color: #fff;
+}
+.overlay2 {
+  position: absolute;
+  top:73%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  
+  padding: auto;
+  color: #fff;
+}
+
+
 .slider {
-  display: flex;
-  width: 100vh;
-  height: 90vw;
-  position: relative;
+
+ width: 100vw;
+ height: 100vh;
   overflow: hidden;
-  flex: 1;
+  
 }
 
 .slide {
+  display: flex;
+  justify-content: center;
   position: absolute;
   top: 0;
   left: 0;
+  height: 100vh;
   width: 100vw;
-  height: 90vw;
   opacity: 0;
+  background: transparent;
   transform: translateX(-50%);
+  overflow: hidden;
   transition: all 0.5s ease;
 }
-
-@media screen and (min-width: 600px) {
-  .slide img {
-    width: 100vw;
-    height: 90vw;
-    object-fit: cover; /* Ensure the image covers the entire slide */
+img{
+ 
+  
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+@media screen and (width: 1000px) {
+  img {
+   background-size: cover;
   }
 }
 
-.slide img {
-  width: 100vw;
-  height: 90vw;
-}
+  
+
 
 .current {
   opacity: 1;
@@ -38,14 +71,14 @@
 
 .content {
   position: absolute;
-  left: 10%;
+  left: 50%;
+  top: 50%;
   transform: translate(-50%, -50%);
   opacity: 0;
   max-width: 80vh;
   min-width: 300px;
   min-height: 100px; /* Adjust the width as per your needs */
   color: #fff;
-  padding: 4rem;
   background: rgba(0, 0, 0, 0.3);
   animation: slide-up 1s ease 0.5s;
   animation-delay: 0.5s;
