@@ -3,6 +3,7 @@ import { ordinalNumbers } from '../src/Hooks/useordinalNumber';
 import { useDayInFull } from '../src/Hooks/useDayInFull';
 import { useMilitaryTime } from '../src/Hooks/useToMillitaryTime';
 import { Information } from './Information '; 
+import TimeIcon from '../src/assets/images/TimeIcon';
 import './calenderFront.css'
 
 export function Time ({date,}){
@@ -124,18 +125,20 @@ console.log(date.split(" ")[0])
 
 if(date.split(" ")[0] !== "Sun"){
   return <>
-     <hr className='w-full py-1 bg-cyan-500'/>
-    <h1 className='pt-5 flex justify-center text-3xl'>{useDayInFull(date.split(" ")[0])}</h1>
-    <h1 className='flex pb-10 justify-center text-3xl'>{ordinalNumbers(date.split(" ")[1])}</h1>
-    {(times.length < 21) ?  <h1 className='pt-5 flex justify-center text-3xl'>The Times Availible</h1>:  <h1 className='pt-5 flex justify-center text-3xl'>Select Your Time</h1>  }
-    {selectedTime && <h1 className='flex justify-center text-3xl'>{selectedTime}</h1>}
-    <div className="container">
-          <div className="grid pb-5">
+     <div className="flex font-mono justify-center items-center py-5 font-bold px-0 bg-neutral-800 text-white">
+                <h1 className="pr-2"><TimeIcon/></h1> 
+                    <h1 className="text-3xl"> Select A Time </h1>
+                </div>
+    <h1 className='pt-5 flex justify-center text-2xl text-white'>{useDayInFull(date.split(" ")[0])}</h1>
+    <h1 className='flex pb-0 justify-center text-2xl text-white'>{ordinalNumbers(date.split(" ")[1])}</h1>
+    <div className="custom-container">
+          <div className="custom-grid">
             {times.map((time, index) => (
               <button
                 key={index}
                 onClick={() => handleTimeClick(time)}
-                className={`btn ${selectedTime === time ? "s" : ""}`}
+                className="flex items-center bg-neutral-800 text-white border-2 border-black rounded-lg p-6 text-2xl w-full"
+        style={time === selectedTime ? { backgroundColor: 'gold', border: '2px solid black', color: "black" } : {}}
               >
                 {time}
               </button>
@@ -148,10 +151,13 @@ if(date.split(" ")[0] !== "Sun"){
     </>
 }else{
   return <>
-   <hr className='w-full py-1 bg-cyan-500'/>
-    <div className='flex flex-col items-center justify-center font-mono p-20'>
-      <h1 className='text-5xl font-bold p-20'>Closed</h1>
-      <p className='text-2xl font-semibold pb-20'>We Are Not Open On Sunday</p>
+   <div className="flex font-mono justify-center items-center py-10 font-bold px-0 bg-neutral-800 text-white">
+                <h1 className="pr-2"></h1> 
+                    <h1 className="text-3xl"></h1>
+                </div>
+    <div className='flex flex-col items-center justify-center font-mono p-10'>
+      <h1 className='text-5xl font-bold p-10'>Closed</h1>
+      <p className='text-2xl font-semibold p-10'>We Are Not Open On Sunday</p>
     </div>
   </>
 

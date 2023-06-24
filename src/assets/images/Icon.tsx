@@ -10,7 +10,7 @@ export default function Icon(){
 Created by potrace 1.15, written by Peter Selinger 2001-2017
 </metadata>
 <g transform="translate(0.000000,1196.000000) scale(0.100000,-0.100000)"
-fill="#000000" stroke="none">
+fill="#EAB308" stroke="none">
 <path d="M3583 11928 c10 -7 548 -364 1195 -794 647 -429 1708 -1133 2357
 -1564 649 -431 1270 -842 1380 -915 l200 -132 255 240 c140 132 256 243 258
 247 2 4 -88 55 -200 113 -112 58 -747 386 -1413 730 -665 343 -1824 942 -2575

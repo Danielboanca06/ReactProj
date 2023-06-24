@@ -1,144 +1,77 @@
-import React, { useState, FormEvent, useEffect, useContext } from "react";
+import React from "react";
 import Loader from "../Loader/BoxLoader"
-import { useNavigate } from "react-router-dom"
-import sendVerification from "./SendVerification";
 
-interface Errors {
-  fullName?: string;
-  password?: string;
-  email?: string;
-}
+import { useForm } from "./useForm";
+
+
 
 function Form({time, date}) {
-  const [isLoading, setIsLoadig] = useState(false)
-  const [fullName, setFullName] = useState("");
-  const [email, setEmail] = useState("");
-  const [phoneNumber, setPhoneNumber] = useState("");
-  const [errors, setErrors] = useState<Errors>({});
-  const [isHovered, setIsHovered] = React.useState(false);
-
-
-  const handleMouseEnter = () => {
-    setIsHovered(true);
-  };
-
-  const handleMouseLeave = () => {
-    setIsHovered(false);
-  };
-
-  const nav = useNavigate();
-
-  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    const errors: Errors = {};
-
-    if (fullName.trim() === "") {
-      errors.fullName = "Full Name is required";
-    }
-
-    if (email.trim() === "") {
-      errors.email = "Email is required";
-    } else if (!email.includes("@") || !email.includes(".")) {
-      errors.email = "Invalid email format";
-    }
-
-    setErrors(errors);
-    function generateAuthToken() {
-      const token = Math.random().toString(36).substring(2) + Date.now();
-      return token;
-      }
-      
-      const authToken = generateAuthToken();
-      console.log(authToken);
-
-
-    if (Object.keys(errors).length === 0) {
-      console.log("Form submitted successfully");
-      setIsLoadig(true)
-    
-      const userData = {
-        Name: fullName,
-        details : {
-          email: email,
-          phoneNumber: phoneNumber,
-          private :{
-            authToken: authToken,
-          },
-          appointmentDetails:{
-            time: time,
-            date: date,
-          }
-        }
-      };
-      localStorage.setItem("userData", JSON.stringify(userData));
-    
-   sendVerification()
-    nav('/verification')
-  }
-  };
+  
+  const {isLoading, handleSubmit, errors, fullName, dispatch, email, phoneNumber, handleMouse, isHovered} = useForm({time, date});
+  
 
   return (<>
     {(!isLoading) ? 
     
     <form
-      className="max-w-md mx-auto p-6 bg-rgb(212 212 216) rounded-lg shadow-md text-black text-2xl"
+      className="max-w-md mx-auto p-6 bg-rgb(212 212 216) rounded-lg shadow-md text-white font-mono text-2xl"
       onSubmit={handleSubmit}
     >
       <h2 className="text-2xl font-semibold mb-6">Register</h2>
 
       <div className="mb-4">
         <label htmlFor="fullName" className="block font-medium mb-1">
-          Full Name*
+          Full Name *
         </label>
         <input
           type="text"
           id="fullName"
           placeholder="Full Name"
-          className={`w-full px-4 py-2 border rounded-md focus:outline-none focus:ring ${
+          className={`w-full text-black px-4 py-2 border border-yellow-500 rounded-md focus:outline-neutral-800 focus:ring focus:ring-yellow-500 ${
             errors.fullName ? "border-red-500" : "border-gray-300"
           }`}
           value={fullName}
-          onChange={(e) => setFullName(e.target.value)}
+          onChange={(e) => dispatch({type: "fullName", value: e.target.value})}
         />
         {errors.fullName && <p className="text-red-500 mt-1">{errors.fullName}</p>}
       </div>
 
       <div className="mb-4">
         <label htmlFor="email" className="block font-medium mb-1">
-          Email*
+          Email *
         </label>
         <input
           type="email"
           id="email"
           placeholder="Email"
-          className={`w-full px-4 py-2 border rounded-md focus:outline-none focus:ring ${
+          className={`w-full text-black px-4 py-2 border border-yellow-500 rounded-md focus:outline-neutral-800 focus:ring focus:ring-yellow-500 ${
             errors.email ? "border-red-500" : "border-gray-300"
           }`}
           value={email}
-          onChange={(e) => setEmail(e.target.value)}
+          onChange={(e) => dispatch({type: "email", value: e.target.value})}
         />
         {errors.email && <p className="text-red-500 mt-1">{errors.email}</p>}
       </div>
 
       <div className="mb-4">
         <label htmlFor="phoneNumber" className="block font-medium mb-1">
-          Phone Number (Optional)
+          Phone Number
         </label>
         <input
           type="text"
           id="phoneNumber"
           placeholder="PhoneNumber"
-          className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-blue-300"
+          className="w-full text-black px-4 py-2 border border-yellow-500 rounded-md focus:outline-neutral-800 focus:ring focus:ring-yellow-500"
           value={phoneNumber}
-          onChange={(e) => setPhoneNumber(e.target.value)}
+          onChange={(e) => dispatch({type: "phoneNumber", value: e.target.value})}
         />
       </div>
       
       <button
       type="submit"
-      className="relative bg-blue-500 hover:bg-blue-600 text-white font-medium px-4 py-2 rounded-md"
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
+      className="relative bg-neutral-800 hover:bg-neutral-700 border-2 border-black text-white font-medium px-4 py-2 rounded-md"
+      onMouseEnter={() => handleMouse(true)}
+      onMouseLeave={()=>handleMouse(false)}
     >
       Book Your Appointment
       {isHovered && (

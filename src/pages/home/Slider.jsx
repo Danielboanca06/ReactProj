@@ -9,7 +9,7 @@ export default function Slider(){
 
   const autoScroll = true;
   let slideInterval;
-  let intervalTime = 12500;
+  let intervalTime = 5500;
 
   const nextSlide = () => {
     setCurrentSlide(currentSlide === slideLength - 1 ? 0 : currentSlide + 1);
@@ -31,8 +31,11 @@ export default function Slider(){
     return () => clearInterval(slideInterval);
   }, [currentSlide]);
 
-  return (
-    <div className="slider">
+  return (<>
+  <div className="slider">
+
+  
+    
     {sliderData.map((slide, index) => {
       return (
         <div
@@ -42,18 +45,14 @@ export default function Slider(){
           {index === currentSlide && (
             <>
               <img src={slide.image} alt="slide" className="image" />
-              <div className="content">
-              <hr className="border-white my-2" />
-                <h2 className="text-white font-mono">{slide.heading}</h2>
-                <hr className="border-white my-2" />
-                
-              </div>
+             
             </>
           )}
         </div>
       );
     })}
   </div>
-);
+  
+  </>);
 };
 

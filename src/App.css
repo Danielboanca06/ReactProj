@@ -1,10 +1,12 @@
 #root {
-    display: flex;
-    flex-direction: column;
-    min-width:100vw ;
-    background: linear-gradient(to bottom, rgb(244 244 245), rgb(212 212 216));
-    margin: 0 auto;
-  
+   
+    
+    width:100vw ;
+    min-height: 100vh;
+    overflow: hidden;
+    margin: 0 ;
+    padding: 0;
+    
   }
  
 
