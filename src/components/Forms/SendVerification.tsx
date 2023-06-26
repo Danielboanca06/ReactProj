@@ -36,14 +36,8 @@ export default function sendVerification() {
     to_name: obj?.Name, // Replace with the recipient's name
     message: message,
   };
+  localStorage.setItem("verifCode", code.toString());
+  return emailjs
+    .send("service_0idk85u", "email_verification_temp1", emailParams, 'O85ZyfdFE5FXw8b7y')
 
-  emailjs
-    .send("service_p4kdj8q", "verification_ohad92g", emailParams, 'zOINVG_v4D4PTd1YB')
-    .then((response) => {
-      console.log("Email sent successfully To customer!", response.status, response.text);
-      localStorage.setItem("verifCode", code.toString());
-    })
-    .catch((error) => {
-      console.error("Error sending email:", error);
-    });
 }

@@ -9,11 +9,9 @@ function Form({time, date}) {
   
   const {isLoading, handleSubmit, errors, fullName, dispatch, email, phoneNumber, handleMouse, isHovered} = useForm({time, date});
   
+  if(isLoading) return <Loader/>;
 
-  return (<>
-    {(!isLoading) ? 
-    
-    <form
+  return (<form
       className="max-w-md mx-auto p-6 bg-rgb(212 212 216) rounded-lg shadow-md text-white font-mono text-2xl"
       onSubmit={handleSubmit}
     >
@@ -80,12 +78,8 @@ function Form({time, date}) {
         </div>
       )}
     </button>
-
-      
-      
-    </form> : <Loader/>}
-   
-  </>);
+    </form>
+  );
 }
 
 export default Form;
