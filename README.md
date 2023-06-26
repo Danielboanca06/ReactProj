@@ -28,4 +28,4 @@ Conclusion
 The Barber App provides an intelligent solution for efficient appointment booking, empowering barbers to manage their schedules effortlessly while delivering a seamless experience to clients. With features such as real-time calendar updates, email notifications, secure authentication, and map integration, the app ensures a professional and user-friendly environment for both barbers and clients. Customize and deploy the Barber App to enhance your barbershop's efficiency and improve customer satisfaction.
 
 View the app at:
-barberapp-barbershop.netlify.app
+https://barberapp-barbershop.netlify.app/
