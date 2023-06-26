@@ -1,6 +1,6 @@
 import React from "react";
 import Contacts from "./Contact";
-import ContactIcon from "../../assets/ContactIcon";
+import ContactIcon from "../../assets/images/ContactIcon";
 import { MapBoxLocation } from "./MapBoxLocation";
 import BottomFooter from "./BottomFooter";
 export default function Footer () {

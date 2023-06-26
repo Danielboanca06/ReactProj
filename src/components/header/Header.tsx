@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 import Icon from '../../assets/images/Icon';
+import { useScrollToTop } from '../../Hooks/useScrollToTop';
 
 export function Header({ overlay }) {
   const [hasOverlay, setHasOverlay] = useState(false);
@@ -14,7 +15,9 @@ export function Header({ overlay }) {
     }
   }, [overlay]);
 
-  
+function handleScroll () {
+  useScrollToTop();
+}
 
   return (
     <>

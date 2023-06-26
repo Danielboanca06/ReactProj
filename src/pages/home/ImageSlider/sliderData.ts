@@ -1,4 +1,3 @@
-
 export const sliderData = [
     {
       image: "https://images.pexels.com/photos/1570806/pexels-photo-1570806.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2", 

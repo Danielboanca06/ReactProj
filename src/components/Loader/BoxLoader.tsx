@@ -5,7 +5,7 @@ export default function Loader () {
   
    
     return (
-      <ThreeBounce size={45} color='cyan' />
+      <ThreeBounce size={45} color='gold' />
     )
   
 }

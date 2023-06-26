@@ -53,7 +53,7 @@ const initialState = {
   errors:{},
   isHovered:false
 }
-export const useForm = ({date, time}) => {
+export const useForm = ({date, time}:{date: string, time: string}) => {
   const [{  isLoading, fullName, email, phoneNumber, errors, isHovered}, dispatch] = useReducer(reducer, initialState) 
   
   
@@ -66,6 +66,8 @@ export const useForm = ({date, time}) => {
   const nav = useNavigate();
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+    //start to load
+    dispatch({type: "loading", value: true});
     e.preventDefault();
     const errors: Errors = {};
 
@@ -86,11 +88,11 @@ export const useForm = ({date, time}) => {
       }
       
       const authToken = generateAuthToken();
-      console.log(authToken);
+      
 
 
     if (Object.keys(errors).length === 0) {
-      console.log("Form submitted successfully");
+      
       dispatch({type: "hovered", value: true})
     
       const userData = {
@@ -109,8 +111,18 @@ export const useForm = ({date, time}) => {
       localStorage.setItem("userData", JSON.stringify(userData));
     
    sendVerification()
+   .then((response) => {
+    console.log("Email sent successfully To customer!", response.status, response.text);
+  })
+  .catch((error) => {
+    console.error("Error sending email:", error);
+  }).finally(() => {
+    dispatch({type: "loading", value: false});
     nav('/verification')
+  })
+  
+}
   }
-  };
   return {isLoading, handleSubmit, errors, fullName, dispatch, email, phoneNumber, handleMouse, isHovered,}
+
 }
