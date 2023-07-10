@@ -1,8 +1,10 @@
 import React from "react";
+import {NavLink }from "react-router-dom"
 import Contacts from "./Contact";
 import ContactIcon from "../../assets/images/ContactIcon";
 import { MapBoxLocation } from "./MapBoxLocation";
 import BottomFooter from "./BottomFooter";
+import { useScrollToTop } from "../../Hooks/useScrollToTop";
 export default function Footer () {
 
     
@@ -29,8 +31,15 @@ export default function Footer () {
      <BottomFooter/>
      </div>
       
-
-      <div className="flex justify-center text-center">Copyright © 2023 Barber Shop. All rights reserved.</div>
+     <div className="flex justify-center text-center">
+     <button className="text-white font-mono pb-2 p-0 hover:no-underline underline" onClick={useScrollToTop}>
+      <NavLink to='/legal' className='flex justify-center'>
+        Legal
+      </NavLink>
+      </button>
+     </div>
+  
+      <div className="flex justify-center text-center text-white font-mono">Copyright © 2023 Barber Shop. All rights reserved.</div>
       </div>
    </> )
 }

@@ -1,6 +1,18 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 export const useCallendarFront = () => {
+  const [date, setDate] = useState("");  
+
+  useEffect(() => {
+    if (date) {
+
+      const timeComponent = document.getElementById('timeComponent');
+      if (timeComponent) {
+        timeComponent.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  }, [date]);
+
   const d: Array<Array<string>> = [];
   const today = new Date();
 
@@ -13,7 +25,8 @@ export const useCallendarFront = () => {
     d.push([day, date.toString(), month]);
   }
   
-  const [date, setDate] = useState("");
+  
+ 
   
   function handleClick(day: Array<string>) {
     setDate(day.join(" "));

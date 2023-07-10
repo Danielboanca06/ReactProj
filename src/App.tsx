@@ -8,6 +8,7 @@ import Footer from "./components/footer/Footer";
 import { CalendarFront } from "./pages/Callendar/CalendarFront";
 import Verification from "./pages/Callendar/Verification";
 import "./App.css";
+import Legal from "./pages/legal/Legal";
 
 function App() {
   return (
@@ -20,7 +21,7 @@ function App() {
             <Route path="/services" element={<Services />} />
             <Route path="/verification" element={<Verification />} />
             <Route path="/book" element={<CalendarFront />} />
-            <Route path="/date" element={<CalendarFront />} />
+            <Route path="/legal" element={<Legal/>} />
             <Route path="/clarificaion" element={<Clarification />} />
           </Routes>
           <Footer />

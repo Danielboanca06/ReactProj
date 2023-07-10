@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { HairCuts } from "../../assets/images/HairCut";
 import Button from "../../components/buttons/Button";
 import { NavLink } from "react-router-dom";
@@ -6,13 +6,7 @@ import { Header } from "../../components/header/Header";
 import { options } from "./serviceData";
 
 export default function Services() {
-  const [showAll, setShowAll] = useState(false);
-
-  const handleClick = () => {
-    setShowAll(!showAll);
-  };
-
-  const menuOptions = showAll ? options : options.slice(0, 5);
+  const menuOptions = options;
 
   return (
     <>
@@ -26,37 +20,6 @@ export default function Services() {
       </div>
 
       <div className="flex flex-col items-center content-center py-5 text-white bg-neutral-700">
-        <div className="flex justify-evenly items-center border-2 border-black w-full sm:max-w-[500px] mt-5">
-          <div className="px-4 py-5">
-            <div className="font-bold text-2xl">
-              <Button onClick={handleClick}>
-                {showAll ? "Show Less" : "Show All"}
-              </Button>
-            </div>
-          </div>
-          <div>
-            <Button onClick={handleClick}>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className={`h-8 w-8 transition-transform duration-200 ${
-                  showAll ? "transform rotate-180" : ""
-                }`}
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M19 9l-7 7-7-7"
-                />
-              </svg>
-            </Button>
-          </div>
-        </div>
-        <br />
-
         {menuOptions.map((option, index) => (
           <div
             key={index}
@@ -75,7 +38,6 @@ export default function Services() {
             </Button>
           </div>
         ))}
-
         <br />
       </div>
     </>

@@ -34,11 +34,12 @@ export function MapBoxLocation() {
   }, []);
 
   return (
-    <div className="flex flex-col justify-center items-center">
+    <label htmlFor="Map">
+    <div className="flex flex-col justify-center items-center text-white text-center">
   <div className="flex justify-center p-10  sm:p-10">
     <div id="map" className="w-full min-w-fit " style={{ height: '400px' }}></div>
   </div>
 </div>
-
+</label>
   )
 }

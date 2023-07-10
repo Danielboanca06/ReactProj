@@ -40,6 +40,16 @@ export const useTimes = ({ date }) => {
   const [{ currentHour, currentDate, selectedTime, parsedTimeData }, dispatch] = useReducer(reducer, initialState);
 
   useEffect(() => {
+    if (date) {
+
+      const timeComponent = document.getElementById('Component');
+      if (timeComponent) {
+        timeComponent.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  }, [date]);
+
+  useEffect(() => {
     fetch('https://barberapp-e3a5c-default-rtdb.europe-west1.firebasedatabase.app/userdata.json')
       .then((response) => response.json())
       .then((data) => {

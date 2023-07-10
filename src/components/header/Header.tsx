@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 import Icon from '../../assets/images/Icon';
-import { useScrollToTop } from '../../Hooks/useScrollToTop';
+
 
 export function Header({ overlay }) {
   const [hasOverlay, setHasOverlay] = useState(false);
@@ -15,16 +15,13 @@ export function Header({ overlay }) {
     }
   }, [overlay]);
 
-function handleScroll () {
-  useScrollToTop();
-}
 
   return (
     <>
       <div className="flex justify-center text-[16px] text-white font-mono bg-neutral-700">
         <div className={hasOverlay ? 'overlay' : ''}>
           <div  className="p-5">
-            <div className="flex justify-center p-4">
+            <div className="flex justify-center p-3">
               <button>
                 <NavLink to="/">
                   <div className="w-auto h-auto  p-2 rounded-xl ">
