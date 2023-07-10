@@ -118,7 +118,9 @@ export const useForm = ({date, time}:{date: string, time: string}) => {
     console.error("Error sending email:", error);
   }).finally(() => {
     dispatch({type: "loading", value: false});
-    nav('/verification')
+    nav('/verification');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+
   })
   
 }

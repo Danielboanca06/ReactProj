@@ -46,7 +46,7 @@ export const useVerification = () => {
       
       sendEmail();
       setFailed(false);
-      navToClarification('/clarification');
+      navToClarification('/clarificaion');
     } else {
       setInputCode('');
       setFailed(true);
@@ -56,7 +56,6 @@ export const useVerification = () => {
   let canExecute = true;
   function handleResendCode() {
     if (canExecute) {
-      console.log('Function executed!');
       canExecute = false;
       setTimeout(function() {
         sendVerification();

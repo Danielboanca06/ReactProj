@@ -40,17 +40,17 @@ export default function Verification() {
               />
             </div>
 
-            <div className="p-10 flex justify-center">
+            <div className=" py-2 flex justify-center">
               <button
                 type="submit"
-                className=" relative bg-neutral-800 hover:bg-neutral-700 border-2 border-black text-white font-medium px-4 py-5 rounded-md"
+                className=" relative  bg-neutral-800 hover:bg-neutral-700 border-2 border-yellow-500 hover:border-black text-white font-medium px-4 py-2 rounded-md"
               >
                 Verify Your Email
               </button>
             </div>
           </form>
 
-          <div className="p-10 flex justify-center bg-neutral-700">
+          <div className=" py-2 flex justify-center bg-neutral-700">
             <button
               onClick={handleResendCode}
               className=" relative bg-neutral-800 hover:bg-neutral-700 border-2 border-black text-white font-medium px-4 py-2 rounded-md"
@@ -59,7 +59,7 @@ export default function Verification() {
             </button>
           </div>
 
-          <div className="flex py-10 bg-neutral-700 justify-center">
+          <div className="flex  py-10 bg-neutral-700 justify-center">
             <NavLink to="/">
               <button className="relative font-mono bg-neutral-800 hover:bg-neutral-500 border-2 border-black text-white font-medium px-4 py-2 rounded-md">
                 Go Back To Home

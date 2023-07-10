@@ -19,14 +19,14 @@ export default function Contacts () {
     <h1 className="text-2xl">E-Mail</h1>
   </div>
   <p className="mb-7 p-2">
-    Barberapp250@gmail.com
+   <a href="mailto:Barberapp250@gmail.com">Barberapp250@gmail.com</a> 
   </p>
   <div className="flex items-center mb-2 p-2">
     <h1 className="pr-2"><PhoneIcon /></h1>
     <h1 className="text-2xl">TelePhone</h1>       
   </div>
   <p>
-    +353 1 234 5678
+   <a href={`tel://${'+353 1 234 5678'}`}> +353 1 234 5678</a>
   </p>
 </div>
 

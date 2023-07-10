@@ -26,8 +26,9 @@ export default function Clarification() {
             <Icon />
           </NavLink>
         </div>
-        <h1 className="p-20 text-white text-center text-[15px] sm:text-[10px]">
-          If for any Reason You cannot make it, please Contact Us at +353 1 234 5678 or Barberapp250@gmail.com
+        <h1 className="text-white font-mono">Booking Confirmed</h1>
+        <h1 className="p-20 text-white text-center text-[15px] sm:text-[10px] font-mono">
+        Please note, you are only able to book appointments for your own account and it will not allow multiple bookings for other individuals; each person must create their own account to book appointments.
         </h1>
       </div>
     </>

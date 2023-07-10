@@ -14,18 +14,20 @@ export function Home() {
 
   return (
     <>
+    
       <Header overlay={true} />
 
       <div className="flex">
-        <Slider />
+        <Slider/>
       </div>
 
-      <div className="overlay2 flex flex-col justify-center items-center font-mono">
-        <h1 className="text-[40px] pb-5 sm:text-[25px]">Welcome To BarberShop</h1>
+      <div className="overlay2 flex flex-col pb-5 justify-center items-center font-sans">
+        <h1 className="flex text-center text-[40px] pb-20 sm:text-[30px]">Welcome To BarberShop</h1>
         <NavLink to='/book' onClick={() => useScrollToTop()}>
           <button className="btt">Book</button>
         </NavLink>
       </div>
+   
 
       <div className="flex font-mono justify-center items-center py-5 font-bold px-0 bg-neutral-800 text-white">
         <h1 className="pr-2"><ScissorsIcon /></h1>
